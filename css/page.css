@@ -7,23 +7,31 @@
 body {
     margin: 0;
     display: grid;
-    grid-template-rows: repeat(9, 1fr);
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-areas:
-        "h h h h h h h h h"
-        "pn pn mc mc mc mc ad ad ad"
-        "pn pn mc mc mc mc ad ad ad"
-        "pn pn mc mc mc mc ad ad ad"
-        "pn pn mc mc mc mc ad ad ad"
-        "pn pn mc mc mc mc ad ad ad"
-        "pn pn n n n n n n n "
-        "pn pn f f f f f f f"
-        "pn pn p p p p p p p ";
+    grid-template-rows: 5% 95%;
+    grid-template-columns:20% 80%;
     min-height: 100vh;
-    grid-gap: 10px;
+    grid-template-areas:
+    "h h"
+    "pn m";
+    overflow: hidden;
 }
+.main-area{
+    display: grid;
+    grid-area: m;
 
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "mc ad"
+        "mc ad"
+        "mc ad"
+        "n n"
+        "f f"
+        "p p";
+    overflow: auto;
+    height: 800px;
 
+}
 
 .main-nav, .page-nav, .main-content, .ads, .page-numbers, footer, .powered {
     background: yellow;
@@ -34,9 +42,25 @@ body {
 
 .main-nav {
     grid-area: h;
+    background-color: black;
+
 }
-.page-nav {
+.main-nav ul, a{
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    padding-right: 1em;
+    padding-left: .3em;
+    color: white;
+
+}
+.page-nav ul, a{
     grid-area: pn;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: black;
 }
 .main-content {
     grid-area: mc;
