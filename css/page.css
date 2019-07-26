@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+
+}
+
+/* creates grid page layout*/
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas:
+        "h h h h h h h h h"
+        "pn pn mc mc mc mc ad ad ad"
+        "pn pn mc mc mc mc ad ad ad"
+        "pn pn mc mc mc mc ad ad ad"
+        "pn pn mc mc mc mc ad ad ad"
+        "pn pn mc mc mc mc ad ad ad"
+        "pn pn n n n n n n n "
+        "pn pn f f f f f f f"
+        "pn pn p p p p p p p ";
+    min-height: 100vh;
+    grid-gap: 10px;
+}
+
+
+
+.main-nav, .page-nav, .main-content, .ads, .page-numbers, footer, .powered {
+    background: yellow;
+    border: 1px solid black;
+}
+
+/*grid positioning*/
+
+.main-nav {
+    grid-area: h;
+}
+.page-nav {
+    grid-area: pn;
+}
+.main-content {
+    grid-area: mc;
+}
+.ads {
+    grid-area: ad;
+}
+
+.page-numbers {
+    grid-area: n;
+}
+
+footer {
+    grid-area: f;
+}
+
+.powered {
+    grid-area: p;
+}
