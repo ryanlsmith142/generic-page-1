@@ -9,7 +9,7 @@ body {
     display: grid;
     grid-template-rows: 5% 95%;
     grid-template-columns:20% 80%;
-    height: 100%;
+    height: 100vh;
     grid-template-areas:
     "h h"
     "pn m";
@@ -18,8 +18,7 @@ body {
 .main-area{
     display: grid;
     grid-area: m;
-    overflow: auto;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 200px);
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
         "mc ad"
@@ -28,7 +27,9 @@ body {
         "n n"
         "f f"
         "p p";
+    overflow: auto;
     height: 100%;
+
 
 }
 
@@ -136,28 +137,68 @@ body {
     margin: 1em;
     height: 75px;
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 .small-box p {
-    margin: auto;
     height: 100%;
+    align-self: center;
     background-color: yellow;
 }
 .large-box {
     border: 1px black solid;
     height: 150px;
     width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.large-box p {
+
+    align-self: center;
+    background-color: yellow;
 }
 .page-numbers {
     grid-area: n;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
 }
 
+.page-numbers ul {
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+
+}
+.page-numbers ul a {
+    text-decoration: none;
+    padding: 1em;
+    color: black;
+}
+
+.page-numbers ul li {
+    transition: .2s;
+    background: white;
+}
+.page-numbers ul li:hover {
+    background-color: black;
+}
+.page-numbers ul li>a:hover {
+    color: white;
+}
 footer {
     grid-area: f;
+    background: #666666;
+    color: white;
 }
 
 .powered {
     grid-area: p;
+    background: #333333;
 }
 
 
