@@ -9,15 +9,16 @@ body {
     display: grid;
     grid-template-rows: 5% 95%;
     grid-template-columns:20% 80%;
-    height: 100vh;
+    height: 100%;
     grid-template-areas:
     "h h"
     "pn m";
+    font-family: Roboto, sans-serfi;
 }
 .main-area{
     display: grid;
     grid-area: m;
-
+    overflow: auto;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
@@ -32,43 +33,82 @@ body {
 }
 
 
-.main-nav, .page-nav, .main-content, .ads, .page-numbers, footer, .powered {
-    background: yellow;
-    border: 1px solid black;
-}
 
 /*grid positioning*/
 
 .main-nav {
     grid-area: h;
     background-color: black;
-
 }
-.main-nav ul, a{
+.main-nav ul {
+    display: flex;
     list-style: none;
     text-decoration: none;
-    display: flex;
-    padding-right: 1em;
-    padding-left: .3em;
     color: white;
 
+}
+.main-nav ul a {
+    color: white;
+    padding-right: 1em;
+    padding-left: .3em;
+}
+.main-nav a {
+    text-decoration: none;
+}
+.page-nav {
+    background: #F0F0F0;
 }
 .page-nav ul{
     grid-area: pn;
     list-style: none;
     display: flex;
     flex-direction: column;
-    color: black;
+    margin: 0;
+    padding: 0;
 }
+.page-nav ul li{
+    padding-top: 1em;
+    padding-left: 1em;
 
+}
+.page-nav ul li:nth-child(1) {
+    padding-bottom: 1em;
+    font-weight: bold;
+
+}
+.page-nav ul a{
+    text-decoration: none;
+    color: black;
+    padding-top: 1em;
+    padding-bottom: .5em;
+}
 .main-content {
     grid-area: mc;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .ads {
     grid-area: ad;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
+.small-box {
+    border: 1px black solid;
+    margin: 1em;
+    height: 75px;
+    width: 300px;
 
+}
+.large-box {
+    border: 1px black solid;
+    margin: auto;
+    height: 150px;
+    width: 300px;
+}
 .page-numbers {
     grid-area: n;
 }
@@ -80,4 +120,5 @@ footer {
 .powered {
     grid-area: p;
 }
+
 
