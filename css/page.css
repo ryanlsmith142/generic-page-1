@@ -8,7 +8,7 @@ body {
     margin: 0;
     display: grid;
     grid-template-rows: 5% 95%;
-    grid-template-columns:20% 80%;
+    grid-template-columns: 1.4fr 10fr;
     height: 100vh;
     grid-template-areas:
     "h h"
@@ -19,9 +19,11 @@ body {
 .main-area{
     display: grid;
     grid-area: m;
-    grid-template-rows: repeat(6, 200px);
+    grid-template-rows: repeat(6, 200px) 100px 50px;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
+        "mc ad"
+        "mc ad"
         "mc ad"
         "mc ad"
         "mc ad"
@@ -53,12 +55,12 @@ body {
     list-style: none;
     text-decoration: none;
     color: white;
+    padding-left: 1em;
 
 }
 .main-nav ul a {
     color: white;
-    padding-right: 1em;
-    padding-left: .3em;
+    padding-right: 2em;
 }
 .main-nav a {
     text-decoration: none;
@@ -96,6 +98,13 @@ body {
     flex-direction: column;
     justify-content: space-between;
     padding-left: 1em;
+    line-height: 1.5em;
+}
+.main-content article {
+    margin-top: 1.5em;
+}
+.main-content article:nth-child(3) {
+    margin-bottom: 5em;
 }
 .ads {
     grid-area: ad;
@@ -137,7 +146,7 @@ body {
     border: 1px black solid;
     margin: 1em;
     height: 75px;
-    width: 300px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,7 +161,7 @@ body {
 .large-box {
     border: 1px black solid;
     height: 150px;
-    width: 300px;
+    width: 500px;
     display: flex;
     flex-direction: column;
 }
@@ -173,6 +182,7 @@ body {
     list-style: none;
     display: flex;
     align-items: flex-end;
+    padding-bottom: 2em;
 
 }
 .page-numbers ul a {
@@ -200,6 +210,10 @@ footer {
 .powered {
     grid-area: p;
     background: #333333;
+    color: white;
+}
+.powered a {
+    color: white;
 }
 
 
